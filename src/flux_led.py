@@ -577,17 +577,20 @@ class WifiLedBulb():
 			msg = bytearray([0x31])
 		else:
 			msg = bytearray([0x41])
+
 		msg.append(r)
 		msg.append(g)
 		msg.append(b)
+
 		if setup == "RGBW":
+			msg.append(0x00)
 			msg.append(0x00)
 			msg.append(0xf0)
 		if setup == "RGBWW":
 			msg.append(0x00)
 			msg.append(0x00)
 			msg.append(0xf0)
-		msg.append(0x0f)
+	
 		self.__write(msg)
 
 	def setPresetPattern(self, pattern, speed):

@@ -24,7 +24,7 @@ const PresetSwitch = class extends Accessory {
     }
     this.speed = config.speed || 40
     // Should Turn Off Light When Turn Off Preset
-    this.shouldTurnOff = config.shouldTurnOff || true
+    this.shouldTurnOff = config.shouldTurnOff
     this.bindEmitter()
   }
 
